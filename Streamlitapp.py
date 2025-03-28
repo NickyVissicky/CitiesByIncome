@@ -17,17 +17,17 @@ selectedCounty = df[df['County'] == county]
 st.dataframe(selectedCounty[['Place', 'Median household income']], width=800, height=200)
 
 minIncome = st.number_input(
-    "Select the minmum median household income...",
-    minVal = int(df['Median household income'].min()),
-    maxVal = int(df['Median household income'].max()),
-    val = int(df['Median household income'].min())
+    "Select the minimum median household income...",
+    min_value=int(df['Median household income'].min()),
+    max_value=int(df['Median household income'].max()),
+    value=int(df['Median household income'].min())
 )
 
 maxIncome = st.number_input(
-    "Select the minmum median household income...",
-    minVal = int(df['Median household income'].min()),
-    maxVal = int(df['Median household income'].max()),
-    val = int(df['Median household income'].max())
+    "Select the maximum median household income...",
+    min_value=int(df['Median household income'].min()),
+    max_value=int(df['Median household income'].max()),
+    value=int(df['Median household income'].max()) 
 )
 
 #could not find a better way to do this ^
