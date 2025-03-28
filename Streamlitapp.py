@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("https://raw.githubusercontent.com/iantonios/dsc205/refs/heads/main/CT-Town-income-census-2020.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/iantonios/dsc205/refs/heads/main/CT-towns-income-census-2020.csv")
 df.head(5)
 
 df['Per capita income'] = df['Per capita income'].str.replace('$', '').str.replace(',', '').astype(int)
