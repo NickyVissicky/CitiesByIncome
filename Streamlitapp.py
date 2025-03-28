@@ -5,11 +5,15 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("https://raw.githubusercontent.com/iantonios/dsc205/refs/heads/main/CT-towns-income-census-2020.csv")
 df.head(5)
 
+df['Per capita income'] = df['Per capita income'].str.replace('$', '').str.replace(',', '').astype(int)
+df['Median household income'] = df['Median household income'].str.replace('$', '').str.replace(',', '').astype(int)
+df['Median family income'] = df['Median family income'].str.replace('$', '').str.replace(',', '').astype(int)
+
 st.markdown("# Team Members")
 st.markdown("Just Nicholas Vissicchio")
 
 county = st.selectbox("Select a County", df['County'].unique())
-selectedCounty = df[df['county'] == county]
+selectedCounty = df[df['County'] == county]
 st.dataframe(selectedCounty[['Town', 'Median household income']], width=800, height=200)
 
 minIncome = st.number_input(
